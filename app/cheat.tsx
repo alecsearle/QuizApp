@@ -52,12 +52,17 @@ export default function Cheat() {
   );
 }
 
+import { Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
+const isLandscape = width > height;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
+    padding: isLandscape ? 50 : 20,
   },
   warningText: {
     fontSize: 20,
